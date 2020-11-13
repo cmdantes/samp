@@ -47,7 +47,36 @@ class NewStudentForm extends React.Component{
 
     render(){
         return(
-            <Form onSubmit
+            <Form onSubmit={this.props.student ? this.editStudent : this.createStudent}>
+              <FormGroup>
+                <Label for="email">Email:</Label>
+                <Input
+                  type="email"
+                  name="email"
+                  onChange={this.onChange}
+                  value={this.defaultIfEmpty(this.state.email)}
+                  ></Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="document">Document:</Label>
+                <Input
+                  type="text"
+                  name="document"
+                  onChange={this.onChange}
+                  value={this.defaultIfEmpty(this.state.document)}
+                  ></Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="phone">Phone:</Label>
+                <Input
+                  type="text"
+                  name="phone"
+                  onChange={this.onChange}
+                  value={this.defaultIfEmpty(this.state.phone)}
+                ></Input>
+              </FormGroup>
+              <Button>Send</Button>
+            </Form>
         )
 
     }
