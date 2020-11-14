@@ -1,0 +1,4 @@
+env
+students-fe/node_modules
+main/main/__pycache__
+main/students/__pycache__
