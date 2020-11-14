@@ -16,8 +16,11 @@ class ConfirmRemovalModal extends Component {
     }));
   };
 
-  deleteStudent = pk => {
-    axios.delete(API_URL + pk).then(() => {
+  deleteStudent = (pk) => {
+  const headers = {
+        'Content-Type': 'application/json'
+    }
+    axios.delete(API_URL + pk,{headers: headers}).then(() => {
       this.props.resetState();
       this.toggle();
     });

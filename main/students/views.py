@@ -12,7 +12,7 @@ def students_list(request):
         data = Student.objects.all()
 
         serializer = StudentSerializer(data, context={'request': request}, many=True)
-
+        print(serializer.data)
         return Response(serializer.data)
 
     elif request.method == 'POST':
